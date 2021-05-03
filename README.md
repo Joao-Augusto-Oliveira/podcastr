@@ -6,24 +6,37 @@
 
 <h3>
 
-Projeto (em desenvolvimento) da #NextLevelWeek5 - promovida pela [Rocketseat], com **NextJS**, **Typescript** e **Sass**.
+Projeto desenvolvido na #NextLevelWeek5 - promovida pela [Rocketseat], com **NextJS**, **Typescript** e **Sass**.
 
 </h3>
 
-![PRINTS](./layouts/app-preview.png)
+![PRINTS](./layouts/preview.png)
+![PRINTS](./layouts/episode.png)
+
+
 
 </div>
 
 ## 📚 **Sobre**
 
-Plataforma de transmissão de podcast.
+Plataforma de transmissão de podcast. 
 
 <br>
 
 ### 📌  **Tecnologias utilizadas**
-- Next.JS
-- Sass
-- Typescript
+- [ReactJS]
+- [NextJS]
+- [TypeScript]
+- [Sass]
+- [date-fns]
+- [JSON-server]
+- [axios]
+- [rc-slider]
+
+<br>
+
+### 🎨 **Layout**
+- [Figma]
 
 <br>
 
@@ -39,9 +52,11 @@ $ cd podcastr
 # Instale as dependências
 $ yarn
 
+# Execute o JSON server 
+$ yarn server
+
 # Execute a aplicação em modo de desenvolvimento
 $ yarn dev
-
 
 ```
 
@@ -59,7 +74,13 @@ Feito com 💜 por <a href="https://www.linkedin.com/in/joão-augusto-oliveira-d
 <!-- Links -->
 
 [Rocketseat]: https://rocketseat.com.br/
-
-
-
+[ReactJS]: (https://reactjs.org)
+[NextJS]: (https://nextjs.org/)
+[TypeScript]: (https://www.typescriptlang.org/)
+[Sass]: (https://sass-lang.com/)
+[date-fns]: (https://date-fns.org/v2.20.1/docs/format)
+[JSON-server]: (https://github.com/typicode/json-server)
+[axios]: (https://github.com/axios/axios)
+[rc-slider]: (https://slider-react-component.vercel.app/)
+[Figma]: (https://www.figma.com/file/UwFEntsHpHYJlHNQAQr4gA/Podcastr?node-id=160%3A2761)
 
