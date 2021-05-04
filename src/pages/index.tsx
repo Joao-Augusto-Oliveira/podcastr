@@ -9,8 +9,8 @@ import { convertDurationToTimeString } from '../utils/convertDurationToTimeStrin
 import styles from './home.module.scss';
 import { usePlayer } from '../contexts/PlayerContext';
 import Head from 'next/head';
-// import { useState } from "react";
-// import Loading from "../components/Loading";
+import { useState } from "react";
+import Loading from "../components/Loading";
 
 type Episode = {
   id: string;
@@ -33,19 +33,19 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
 
   const episodeList = [...latestEpisodes, ...allEpisodes];
 
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // setTimeout(() => {
-  //   setIsLoading(false);
-  // }, 1700);
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 1700);
 
-  // if (isLoading) {
-  //   return (
-  //     <>
-  //       <Loading />
-  //     </>
-  //   );
-  // }
+  if (isLoading) {
+    return (
+      <>
+        <Loading />
+      </>
+    );
+  }
 
   return (
     <div className={styles.homepage}>
