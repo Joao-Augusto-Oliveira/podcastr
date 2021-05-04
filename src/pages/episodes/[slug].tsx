@@ -1,14 +1,17 @@
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Head  from 'next/head';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePlayer } from '../../contexts/PlayerContext';
 import { api } from "../../services/api"
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
+import Loading from "../../components/Loading";
+
 import styles from './episode.module.scss';
+import { useState } from 'react';
 
 type Episode = {
     id: string;
@@ -29,18 +32,32 @@ type EpisodeProps = {
 export default function Episode({ episode }: EpisodeProps) {
     const { play } = usePlayer();
 
+    const [isLoading, setIsLoading] = useState(true);
+
+    setTimeout(() => {
+        setIsLoading(false);
+    }, 1700);
+
+    if (isLoading) {
+        return (
+            <>
+                <Loading />
+            </>
+        );
+    }
+
     return (
-    <div className={styles.episode}>
-        <Head>
-            <title>{episode.title} | Podcastr</title>
-        </Head>
+        <div className={styles.episode}>
+            <Head>
+                <title>{episode.title} | Podcastr</title>
+            </Head>
             <div className={styles.thumbnailContainer}>
                 <Link href="/">
                     <button type="button">
-                        <img src="/arrow-left.svg" alt="Voltar"/>
+                        <img src="/arrow-left.svg" alt="Voltar" />
                     </button>
                 </Link>
-                
+
                 <Image
                     width={700}
                     height={160}
@@ -48,7 +65,7 @@ export default function Episode({ episode }: EpisodeProps) {
                     objectFit="cover"
                 />
                 <button type="button" onClick={() => play(episode)}>
-                    <img src="/play.svg" alt="Tocar episódio"/>
+                    <img src="/play.svg" alt="Tocar episódio" />
                 </button>
             </div>
 
@@ -59,33 +76,33 @@ export default function Episode({ episode }: EpisodeProps) {
                 <span>{episode.durationAsString}</span>
             </header>
 
-            <div 
+            <div
                 className={styles.description}
                 dangerouslySetInnerHTML={{ __html: episode.description }}
-            />           
-            </div>
+            />
+        </div>
     )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const { data } = await api.get('episodes', {
         params: {
-            _limit: 2, 
+            _limit: 2,
             _sort: 'published_at',
             _order: 'desc'
         }
     })
-    
-    const paths = data.map(episode => {
+
+    const paths = data.map((episode) => {
         return {
             params: {
-                slug: episode.id
+                slug: data.id
             }
-        }        
+        }
     })
 
     return {
-        paths,
+        paths: [],
         fallback: 'blocking'
     }
 }
