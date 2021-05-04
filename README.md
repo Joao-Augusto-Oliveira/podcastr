@@ -10,16 +10,17 @@ Projeto desenvolvido na #NextLevelWeek5 - promovida pela [Rocketseat], com **Nex
 
 </h3>
 
-![PRINTS](./layouts/preview.png)
-![PRINTS](./layouts/episode.png)
-
-
+![PRINTS](./layouts/preview.gif)
 
 </div>
 
 ## 📚 **Sobre**
 
 Plataforma de transmissão de podcast. 
+- Exibe a listagem dos últimos adicionados;
+- Listagem dos demais episódios;
+- Player com os botões: shuffle, previous, play/pause, next e repeat;
+- Página dinâmica de exibição de um episódio com sua descrição;
 
 <br>
 
@@ -32,6 +33,7 @@ Plataforma de transmissão de podcast.
 - [JSON-server]
 - [axios]
 - [rc-slider]
+- [LottieFiles]
 
 <br>
 
@@ -83,4 +85,5 @@ Feito com 💜 por <a href="https://www.linkedin.com/in/joão-augusto-oliveira-d
 [axios]: https://github.com/axios/axios
 [rc-slider]: https://slider-react-component.vercel.app/
 [Figma]: https://www.figma.com/file/UwFEntsHpHYJlHNQAQr4gA/Podcastr?node-id=160%3A2761
+[LottieFiles]: https://lottiefiles.com/
 
