@@ -8,10 +8,7 @@ import { usePlayer } from '../../contexts/PlayerContext';
 import { api } from "../../services/api"
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
-import Loading from "../../components/Loading";
-
 import styles from './episode.module.scss';
-import { useState } from 'react';
 
 type Episode = {
     id: string;
@@ -31,20 +28,6 @@ type EpisodeProps = {
 
 export default function Episode({ episode }: EpisodeProps) {
     const { play } = usePlayer();
-
-    const [isLoading, setIsLoading] = useState(true);
-
-    setTimeout(() => {
-        setIsLoading(false);
-    }, 1700);
-
-    if (isLoading) {
-        return (
-            <>
-                <Loading />
-            </>
-        );
-    }
 
     return (
         <div className={styles.episode}>
@@ -96,13 +79,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const paths = data.map((episode) => {
         return {
             params: {
-                slug: data.id
+                slug: episode.id
             }
         }
     })
 
     return {
-        paths: [],
+        paths,
         fallback: 'blocking'
     }
 }
