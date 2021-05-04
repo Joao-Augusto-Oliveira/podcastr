@@ -79,7 +79,7 @@ Feito com 💜 por <a href="https://www.linkedin.com/in/joão-augusto-oliveira-d
 [TypeScript]: https://www.typescriptlang.org/
 [Sass]: https://sass-lang.com/
 [date-fns]: https://date-fns.org/v2.20.1/docs/format
-[JSON-server]: (https://github.com/typicode/json-server
+[JSON-server]: https://github.com/typicode/json-server
 [axios]: https://github.com/axios/axios
 [rc-slider]: https://slider-react-component.vercel.app/
 [Figma]: https://www.figma.com/file/UwFEntsHpHYJlHNQAQr4gA/Podcastr?node-id=160%3A2761
